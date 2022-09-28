@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/materialCardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        app:cardCornerRadius="4dp"
+        app:cardElevation="4dp"
+        app:layout_constraintBottom_toTopOf="@+id/keyboard"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="411dp"
+            android:layout_height="349dp">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/currencyImage"
+                android:layout_width="@dimen/flag_width"
+                android:layout_height="@dimen/flag_height"
+                android:layout_margin="8dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:padding="8dp"
+                android:src="@drawable/icon_cana"
+                app:civ_border_color="#FFFFFFFF"
+                app:civ_border_width="2dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/currency"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:layout_marginTop="32dp"
+                android:padding="2dp"
+                android:text="cad"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/currencyImage"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="@string/cad_canadian_dollar" />
+
+            <TextView
+                android:id="@+id/currencyRatio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:padding="8dp"
+                android:textColor="?android:textColorSecondary"
+                app:layout_constraintStart_toEndOf="@+id/currencyImage"
+                app:layout_constraintTop_toBottomOf="@+id/currency" />
+
+            <EditText
+                android:id="@+id/converter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:layout_marginStart="16dp"
+                android:background="@android:color/transparent"
+                android:focusableInTouchMode="false"
+                android:inputType="numberDecimal"
+                android:padding="8dp"
+                android:textSize="30sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/currencyImage" />
+
+            <View
+                android:id="@+id/dividerLine"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/gray"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/converter" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/swapCurrency"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="64dp"
+                android:layout_marginBottom="160dp"
+                android:backgroundTint="@color/white"
+                android:contentDescription="aaaaaa"
+                android:src="@drawable/ic_swap"
+                app:fabSize="normal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/currencyImage2"
+                android:layout_width="@dimen/flag_width"
+                android:layout_height="@dimen/flag_height"
+                android:layout_margin="8dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:padding="8dp"
+                android:src="@drawable/icon_eur"
+                app:civ_border_color="#FFFFFFFF"
+                app:civ_border_width="2dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/dividerLine" />
+
+            <TextView
+                android:id="@+id/currency2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:text="eur"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/currencyImage2"
+                app:layout_constraintTop_toBottomOf="@id/dividerLine"
+                tools:text="EUR - euro" />
+
+            <TextView
+                android:id="@+id/currencyRatio2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:padding="8dp"
+                android:textColor="?android:textColorSecondary"
+                app:layout_constraintStart_toEndOf="@+id/currencyImage2"
+                app:layout_constraintTop_toBottomOf="@+id/currency2" />
+<!--                android:text="@string/currency_ratio2"-->
+
+
+            <TextView
+                android:id="@+id/currencyResult"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:layout_marginTop="8dp"
+                android:padding="8dp"
+                android:textColor="@color/blue"
+                android:textSize="30sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.364"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/currencyImage2"
+                tools:text="@string/currency_result" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.example.mycurrencyapp.ui.MyKeyboardView
+        android:id="@+id/keyboard"
+        android:layout_width="408dp"
+        android:layout_height="246dp"
+        android:layout_marginBottom="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.482"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TableLayout
+        android:id="@+id/keyboard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:divider="@drawable/keyboard_divider"
+        android:orientation="vertical"
+        android:showDividers="beginning|middle|end"
+        tools:ignore="MissingConstraints">
+
+        <TableRow style="@style/keyboard_row">
+
+            <TextView
+                android:id="@+id/number1"
+                style="@style/keyboard_number_button"
+                android:text="@string/_1" />
+
+            <TextView
+                android:id="@+id/number2"
+                style="@style/keyboard_number_button"
+                android:text="@string/_2" />
+
+            <TextView
+                android:id="@+id/number3"
+                style="@style/keyboard_number_button"
+                android:text="@string/_3" />
+        </TableRow>
+
+        <TableRow style="@style/keyboard_row">
+
+            <TextView
+                android:id="@+id/number4"
+                style="@style/keyboard_number_button"
+                android:text="@string/_4" />
+
+            <TextView
+                android:id="@+id/number5"
+                style="@style/keyboard_number_button"
+                android:text="@string/_5" />
+
+            <TextView
+                android:id="@+id/number6"
+                style="@style/keyboard_number_button"
+                android:text="@string/_6" />
+        </TableRow>
+
+        <TableRow style="@style/keyboard_row">
+
+            <TextView
+                android:id="@+id/number7"
+                style="@style/keyboard_number_button"
+                android:text="@string/_7" />
+
+            <TextView
+                android:id="@+id/number8"
+                style="@style/keyboard_number_button"
+                android:text="@string/_8" />
+
+            <TextView
+                android:id="@+id/number9"
+                style="@style/keyboard_number_button"
+                android:text="@string/_9" />
+        </TableRow>
+
+        <TableRow style="@style/keyboard_row">
+
+            <TextView
+                android:id="@+id/dot"
+                style="@style/keyboard_button"
+                android:text="@string/dot"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <TextView
+                android:id="@+id/number0"
+                style="@style/keyboard_number_button"
+                android:text="@string/_0" />
+
+            <ImageView
+                android:id="@+id/backspace"
+                style="@style/keyboard_button"
+                android:src="@drawable/ic_backspace"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+        </TableRow>
+    </TableLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
